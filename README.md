@@ -11,7 +11,9 @@ Victor Hugo is setup to use [PostCSS](http://postcss.org/) and [Babel](https://b
 To use this boilerplate, you'll need to have the latest [Node](https://nodejs.org/en/download/) installed.
 
 First clone the repo:
-`git clone https://github.com/TheCing/hugo-template.git`
+```bash
+git clone https://github.com/TheCing/hugo-template.git
+```
 (or use SSH)
 
 After CDing to the project directory, install npm packages and dependencies:
