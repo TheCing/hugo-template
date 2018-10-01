@@ -1,73 +1,68 @@
-# Victor Hugo
+# Victor Hugo - Now with 100% more Sass!
 
-**A Hugo boilerplate for creating truly epic websites**
+**Built on a Hugo boilerplate for creating truly epic websites**
 
 This is a boilerplate for using [Hugo](https://gohugo.io/) as a static site generator and [Gulp](https://gulpjs.com/) + [Webpack](https://webpack.js.org/) as your asset pipeline.
 
-Victor Hugo setup to use [PostCSS](http://postcss.org/) and [Babel](https://babeljs.io/) for CSS and JavaScript compiling/transpiling.
+Victor Hugo is setup to use [PostCSS](http://postcss.org/) and [Babel](https://babeljs.io/) for CSS and JavaScript compiling/transpiling. This version of the boilerplate adds Sass support through [node-sass](https://www.npmjs.com/package/node-sass). Special thanks to [Kuhrt](https://github.com/Kuhrt) for his `hugo-template` repo.
 
-This project is released under the [MIT license](LICENSE). Please make sure you understand its implications and guarantees.
+### Installation
 
-## Usage
+To use this boilerplate, you'll need to have the latest [Node](https://nodejs.org/en/download/) installed.
 
-### Prerequisites
+First clone the repo:
+`git clone https://github.com/TheCing/hugo-template.git`
+(or use SSH)
 
-You need to have the latest/LTS [node](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm) versions installed in order to use Victor Hugo.
-
-Next step, clone this repository and run:
+After CDing to the project directory, install npm packages and dependencies:
 
 ```bash
 npm install
 ```
+Wait for this to complete before moving on.
 
-This will take some time and will install all packages necessary to run Victor Hugo and it's tasks.
+## Site Structure
 
-### Development
+```
+|--site                // Everything in here will be built with hugo
+|  |--content          // Pages and collections
+|  |--data             // YAML/TOML data files
+|  |--layouts          // This is where all templates go
+|  |  |--partials      // This is where includes live
+|  |  |--index.html    // The index page
+|  |--static           // Files in here ends up in the public folder
+|--src                 // Files that will pass through the asset pipeline
+|  |--css              // We won't be using the CSS folder here as we are using Sass
+|  |--fonts            // Fonts placed here can be referenced in Sass and JS files
+|  |--js               // app.js will be compiled to /app.js with babel
+|  |--scss             // All styling goes here. main.scss will be compiled to main.css at compilation
+```
 
-While developing your website, use:
+### Running
+
+To run your local development server:
 
 ```bash
 npm start
 ```
 
-or
+Visit http://localhost:3000/ to preview your new website. [BrowserSync](https://browsersync.io/) will automatically refresh the browser window when changes are made to your site. Access the BrowserSync UI at http://localhost:3001/.
 
-```bash
-gulp server
-```
+### Deploying
 
-Then visit http://localhost:3000/ *- or a new browser windows popped-up already -* to preview your new website. BrowserSync will automatically reload the CSS or refresh the whole page, when stylesheets or content changes.
-
-### Static build
-
+#### Deploying to FTP or rsync
 To build a static version of the website inside the `/dist` folder, run:
 
 ```bash
 npm run build
 ```
 
-To get a preview of posts or articles not yet published, run:
+#### Deploying to Netlify
+Victor-Hugo was built to integrate cleanly with Netlify. To deploy to Netlify:
+- Push your clone to your own GitHub repository.
+- [Create a new site on Netlify](https://app.netlify.com/start) and link the repository.
 
-```bash
-npm run build-preview
-```
-
-See [package.json](https://github.com/atomtigerzoo/victor-hugo/blob/readme-updates/package.json#L7) or the included gulp file for all tasks.
-
-## Structure
-
-```
-|--site                // Everything in here will be built with hugo
-|  |--content          // Pages and collections - ask if you need extra pages
-|  |--data             // YAML data files with any data for use in examples
-|  |--layouts          // This is where all templates go
-|  |  |--partials      // This is where includes live
-|  |  |--index.html    // The index page
-|  |--static           // Files in here ends up in the public folder
-|--src                 // Files that will pass through the asset pipeline
-|  |--css              // CSS files in the root of this folder will end up in /css/...
-|  |--js               // app.js will be compiled to /app.js with babel
-```
+Netlify will now build and deploy your site whenever you push your repo.
 
 ## Basic Concepts
 
@@ -101,17 +96,3 @@ You can access the environment variable inside the theme files with `getenv "NOD
     {{ if eq (getenv "NODE_ENV") "development" }}You're in development!{{ end }}
 
 All tasks starting with *build* set the environment variable to `production` - the other will set it to `development`.
-
-## Deploying to Netlify
-
-- Push your clone to your own GitHub repository.
-- [Create a new site on Netlify](https://app.netlify.com/start) and link the repository.
-
-Now Netlify will build and deploy your site whenever you push to git.
-
-You can also click this button:
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify/victor-hugo)
-
-
-## Enjoy!! 😸
