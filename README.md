@@ -6,7 +6,7 @@ This is a boilerplate for using [Hugo](https://gohugo.io/) as a static site gene
 
 Victor Hugo is setup to use [PostCSS](http://postcss.org/) and [Babel](https://babeljs.io/) for CSS and JavaScript compiling/transpiling. This version of the boilerplate adds Sass support through [node-sass](https://www.npmjs.com/package/node-sass). Special thanks to [Kuhrt](https://github.com/Kuhrt) for his `hugo-template` repo.
 
-### Installation
+## Installation
 
 To use this boilerplate, you'll need to have the latest [Node](https://nodejs.org/en/download/) installed.
 
@@ -38,7 +38,7 @@ Wait for this to complete before moving on.
 |  |--scss             // All styling goes here. main.scss will be compiled to main.css at compilation
 ```
 
-### Running
+## Running
 
 To run your local development server:
 
@@ -48,7 +48,7 @@ npm start
 
 Visit http://localhost:3000/ to preview your new website. [BrowserSync](https://browsersync.io/) will automatically refresh the browser window when changes are made to your site. Access the BrowserSync UI at http://localhost:3001/.
 
-### Deploying
+## Deploying
 
 #### Deploying to FTP or rsync
 To build a static version of the website inside the `/dist` folder, run:
